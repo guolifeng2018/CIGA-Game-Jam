@@ -1,0 +1,60 @@
+@startuml
+abstract class OptionalValueBase {
+}
+class "OptionalValue`1"<T> {
+    + OptionalValue()
+    + OptionalValue(value:T)
+    + InUse : bool <<get>> <<set>>
+    + Value : T <<get>> <<set>>
+    + <<override>> ToString() : string
+    + ValueIsEquals(other:OptionalValue<T>) : bool
+    + {static} ValueIsEquals(p1:OptionalValue<T>, p2:OptionalValue<T>) : bool
+}
+class OptionalInt {
+    + OptionalInt()
+    + OptionalInt(value:int)
+}
+class OptionalFloat {
+    + OptionalFloat()
+    + OptionalFloat(value:float)
+}
+class OptionalString {
+    + OptionalString()
+    + OptionalString(value:string)
+}
+class OptionalVector2 {
+    + OptionalVector2()
+    + OptionalVector2(value:Vector2)
+}
+class OptionalVector3 {
+    + OptionalVector3()
+    + OptionalVector3(value:Vector3)
+}
+class OptionalColor {
+    + OptionalColor()
+    + OptionalColor(value:Color)
+}
+class OptionalLayerMask {
+    + OptionalLayerMask()
+    + OptionalLayerMask(value:LayerMask)
+    + OptionalLayerMask(value:int)
+}
+class OptionalRect {
+    + OptionalRect()
+    + OptionalRect(value:Rect)
+}
+class OptionalSprite {
+    + OptionalSprite()
+    + OptionalSprite(value:Sprite)
+}
+OptionalValueBase <|-- "OptionalValue`1"
+"OptionalValue`1" "<int>" <|-- OptionalInt
+"OptionalValue`1" "<float>" <|-- OptionalFloat
+"OptionalValue`1" "<string>" <|-- OptionalString
+"OptionalValue`1" "<Vector2>" <|-- OptionalVector2
+"OptionalValue`1" "<Vector3>" <|-- OptionalVector3
+"OptionalValue`1" "<Color>" <|-- OptionalColor
+"OptionalValue`1" "<LayerMask>" <|-- OptionalLayerMask
+"OptionalValue`1" "<Rect>" <|-- OptionalRect
+"OptionalValue`1" "<Sprite>" <|-- OptionalSprite
+@enduml

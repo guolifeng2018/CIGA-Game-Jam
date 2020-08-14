@@ -1,0 +1,8 @@
+@startuml
+class GameObjectExtensions <<static>> {
+    + {static} GetOrAddComponent(go:GameObject) : T
+    + {static} GetOrAddComponent(go:GameObject, type:System.Type) : Component
+    + {static} RemoveComponent(go:GameObject) : void
+    + {static} RemoveComponent(go:GameObject, type:System.Type) : void
+}
+@enduml

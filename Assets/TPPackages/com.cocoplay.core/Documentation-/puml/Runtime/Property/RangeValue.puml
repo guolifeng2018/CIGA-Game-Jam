@@ -1,0 +1,31 @@
+@startuml
+abstract class RangeValueBase {
+}
+class "RangeValue`1"<T> {
+    + RangeValue(from:T, to:T)
+    + from : T
+    + to : T
+    + <<override>> ToString() : string
+}
+class RangeInt {
+    + RangeInt(from:int, to:int)
+}
+class RangeFloat {
+    + RangeFloat(from:float, to:float)
+}
+class RangeVector2 {
+    + RangeVector2(from:Vector2, to:Vector2)
+}
+class RangeVector3 {
+    + RangeVector3(from:Vector3, to:Vector3)
+}
+class RangeColor {
+    + RangeColor(from:Color, to:Color)
+}
+RangeValueBase <|-- "RangeValue`1"
+"RangeValue`1" "<int>" <|-- RangeInt
+"RangeValue`1" "<float>" <|-- RangeFloat
+"RangeValue`1" "<Vector2>" <|-- RangeVector2
+"RangeValue`1" "<Vector3>" <|-- RangeVector3
+"RangeValue`1" "<Color>" <|-- RangeColor
+@enduml

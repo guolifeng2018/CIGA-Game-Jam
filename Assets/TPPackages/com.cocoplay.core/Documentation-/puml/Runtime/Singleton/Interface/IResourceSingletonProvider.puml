@@ -1,0 +1,5 @@
+@startuml
+interface IResourceSingletonProvider {
+    SingletonResourcePath : string <<get>>
+}
+@enduml

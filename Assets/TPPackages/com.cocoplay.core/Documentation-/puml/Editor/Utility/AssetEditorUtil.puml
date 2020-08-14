@@ -1,0 +1,7 @@
+@startuml
+class AssetEditorUtil <<static>> {
+    + {static} CreateAsset(asset:Object, path:string) : void
+    + {static} CreateAssetFolder(folder:string) : void
+    + {static} FocusScriptableObject(assetPath:string) : void
+}
+@enduml

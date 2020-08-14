@@ -1,0 +1,15 @@
+@startuml
+class DebugSettingsSingletonProvider {
+    + <<override>> SingletonResourcePath : string <<get>>
+}
+class DebugSettings {
+    + <<const>> RESOURCE_PATH : string = "debug/debug_settings"
+    + OnSingletonCreated() : void
+    + IsEnabled : bool <<get>>
+    + ModuleDatas : List<ModuleDebugData> <<get>>
+    + GetModuleData() : T
+}
+"ScriptableResourceSingletonProvider`1" "<DebugSettings>" <|-- DebugSettingsSingletonProvider
+"ScriptableSingleton`2" "<DebugSettings,DebugSettingsSingletonProvider>" <|-- DebugSettings
+ISingletonCreateHandler <|-- DebugSettings
+@enduml

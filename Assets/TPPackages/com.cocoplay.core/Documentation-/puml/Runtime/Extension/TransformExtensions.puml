@@ -1,0 +1,21 @@
+@startuml
+class TransformExtensions <<static>> {
+    + {static} SetPosX(trans:Transform, x:float) : void
+    + {static} SetPosY(trans:Transform, y:float) : void
+    + {static} SetPosZ(trans:Transform, z:float) : void
+    + {static} SetLocalPosX(trans:Transform, x:float) : void
+    + {static} SetLocalPosY(trans:Transform, y:float) : void
+    + {static} SetLocalPosZ(trans:Transform, z:float) : void
+    + {static} AddPosX(trans:Transform, x:float) : void
+    + {static} AddPosY(trans:Transform, y:float) : void
+    + {static} AddPosZ(trans:Transform, z:float) : void
+    + {static} AddLocalPosX(trans:Transform, x:float) : void
+    + {static} AddLocalPosY(trans:Transform, y:float) : void
+    + {static} AddLocalPosZ(trans:Transform, z:float) : void
+    + {static} RemoveAllChildren(trans:Transform) : void
+    + {static} SetChildLayer(trans:Transform, layer:int) : void
+    + {static} SetSelfAndChildLayer(trans:Transform, layer:int) : void
+    + {static} SetParent(trans:Transform, parent:Transform, stayOption:TransformUtil.StayOption) : void
+    + {static} Reset(trans:Transform) : void
+}
+@enduml

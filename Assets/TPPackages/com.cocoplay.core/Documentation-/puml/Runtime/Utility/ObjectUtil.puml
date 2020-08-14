@@ -1,0 +1,22 @@
+@startuml
+class ObjectUtil <<static>> {
+    + {static} GetOrAddComponent(go:GameObject) : T
+    + {static} GetOrAddComponent(com:Component) : T
+    + {static} GetOrAddComponent(go:GameObject, type:System.Type) : Component
+    + {static} GetOrAddComponent(com:Component, type:System.Type) : Component
+    + {static} RemoveComponent(go:GameObject) : void
+    + {static} RemoveComponent(com:Component) : void
+    + {static} RemoveComponent(go:GameObject, type:System.Type) : void
+    + {static} RemoveComponent(com:Component, type:System.Type) : void
+    + {static} Instantiate(prefabGo:GameObject, parent:Transform, stayOption:TransformUtil.StayOption) : GameObject
+    + {static} Instantiate(prefabResPath:string, parent:Transform, stayOption:TransformUtil.StayOption) : GameObject
+    + {static} Instantiate(prefabCom:T, parent:Transform, stayOption:TransformUtil.StayOption) : T
+    + {static} Instantiate(prefabGo:GameObject, parent:Transform, stayOption:TransformUtil.StayOption) : T
+    + {static} Instantiate(prefabResPath:string, parent:Transform, stayOption:TransformUtil.StayOption) : T
+    + {static} InstantiateOrCreate(prefabGo:GameObject, parent:Transform, stayOption:TransformUtil.StayOption) : GameObject
+    + {static} InstantiateOrCreate(prefabResPath:string, parent:Transform, stayOption:TransformUtil.StayOption) : GameObject
+    + {static} InstantiateOrCreate(prefabCom:T, parent:Transform, stayOption:TransformUtil.StayOption) : T
+    + {static} InstantiateOrCreate(prefabGo:GameObject, parent:Transform, stayOption:TransformUtil.StayOption) : T
+    + {static} InstantiateOrCreate(prefabResPath:string, parent:Transform, stayOption:TransformUtil.StayOption) : T
+}
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class ComponentExtensions <<static>> {
+    + {static} GetOrAddComponent(com:Component) : T
+    + {static} GetOrAddComponent(com:Component, type:System.Type) : Component
+    + {static} RemoveComponent(com:Component) : void
+    + {static} RemoveComponent(com:Component, type:System.Type) : void
+}
+@enduml

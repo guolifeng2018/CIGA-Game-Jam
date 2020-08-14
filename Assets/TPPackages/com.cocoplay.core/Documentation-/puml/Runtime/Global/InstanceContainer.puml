@@ -1,0 +1,13 @@
+@startuml
+class InstanceContainer {
+    + {static} Bind(instance:object) : void
+    + {static} Bind(instance:object, types:Type[]) : void
+    + Rebind(instance:object) : void
+    + Rebind(instance:object, types:Type[]) : void
+    + {static} Unbind(instance:object) : void
+    + {static} Unbind(instance:object, types:Type[]) : void
+    + {static} UnbindAll(instance:object) : void
+    + {static} Get(type:Type) : object
+    + {static} Get() : T
+}
+@enduml

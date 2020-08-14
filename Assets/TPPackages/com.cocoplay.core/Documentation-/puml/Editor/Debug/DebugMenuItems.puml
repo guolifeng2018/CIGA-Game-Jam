@@ -1,0 +1,5 @@
+@startuml
+class DebugMenuItems {
+    + {static} FocusAssetObject() : void
+}
+@enduml

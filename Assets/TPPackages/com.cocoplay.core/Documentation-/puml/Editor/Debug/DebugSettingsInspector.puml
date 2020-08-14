@@ -1,0 +1,13 @@
+@startuml
+class DebugSettingsInspector {
+    + <<override>> OnInspectorGUI() : void
+}
+class Styles {
+    + {static} <<readonly>> ModuleSettingsPropertyName : string = "settings"
+    + {static} <<readonly>> DefaultIndentWidth : float = 12f
+    + {static} <<readonly>> DefaultLineSpace : float
+    + {static} <<readonly>> Modules : GUIContent
+    + {static} <<readonly>> BoldLabelStyle : GUIStyle
+}
+DebugSettingsInspector +-- Styles
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class DictionaryUtil <<static>> {
+    + {static} Create(values:IList<TValue>, keyFunc:Func<TValue, TKey>) : Dictionary<TKey, TValue>
+    + {static} Create(contents:IList<TContent>, keyFunc:Func<TContent, TKey>, valueFunc:Func<TContent, TValue>) : Dictionary<TKey, TValue>
+    + {static} GetValue(dict:Dictionary<TKey, TValue>, key:TKey) : TValue
+    + {static} GetOrAddNewValue(dict:Dictionary<TKey, TValue>, key:TKey) : TValue
+    + {static} GetOrAddDefaultValue(dict:Dictionary<TKey, TValue>, key:TKey) : TValue
+    + {static} ForEach(dict:Dictionary<TKey, TValue>, action:Action<TKey, TValue>) : void
+    + {static} ForEach(dict:Dictionary<TKey, TValue>, action:Action<TValue>) : void
+}
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+abstract class ModuleDebugData {
+}
+class "ModuleDebugDataProvider`1"<TData> {
+    + ProvideSingleton() : TData
+}
+abstract class "ModuleDebugData`2"<TData,TSettings> {
+    + {static} SettingsInstance : TSettings <<get>>
+}
+abstract class SettingsBase {
+}
+ScriptableObject <|-- ModuleDebugData
+"ISingletonProvider`1" "<TData>" <|-- "ModuleDebugDataProvider`1"
+ModuleDebugData <|-- "ModuleDebugData`2"
+ModuleDebugData +-- SettingsBase
+@enduml

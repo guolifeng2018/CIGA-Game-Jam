@@ -1,0 +1,12 @@
+@startuml
+class SingletonUtil <<static>> {
+    + {static} Create() : TSingleton
+    + {static} Get() : TSingleton
+    + {static} Bind(singleton:object) : void
+    + {static} Unbind(singleton:object) : void
+    + {static} CallOnCreateIfPossible(singleton:object) : void
+    + {static} CallOnAwakeIfPossible(singleton:object) : void
+    + {static} CallOnDestroyIfPossible(singleton:object) : void
+    + {static} DefaultResourcePath() : string
+}
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class "ResourceComponentSingletonProvider`1"<TSingleton> {
+    + ProvideSingleton() : TSingleton
+    + <<virtual>> SingletonResourcePath : string <<get>>
+}
+"ISingletonProvider`1" "<TSingleton>" <|-- "ResourceComponentSingletonProvider`1"
+IResourceSingletonProvider <|-- "ResourceComponentSingletonProvider`1"
+@enduml

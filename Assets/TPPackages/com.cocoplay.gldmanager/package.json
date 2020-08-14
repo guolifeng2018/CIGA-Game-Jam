@@ -1,0 +1,12 @@
+{
+    "name": "com.cocoplay.gldmanager",
+    "version": "0.0.1-preview",
+    "displayName": "_TC GLD Module",
+    "description": "the GLD Module",
+    "unity": "2018.2",
+    "unityRelease": "14f1",
+    "dependencies": {},
+    "keywords": [
+        "gld"
+    ]
+}

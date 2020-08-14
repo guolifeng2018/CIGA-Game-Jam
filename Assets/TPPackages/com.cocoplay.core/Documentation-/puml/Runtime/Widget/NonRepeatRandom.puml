@@ -1,0 +1,8 @@
+@startuml
+class NonRepeatRandom {
+    + NonRepeatRandom(count:int)
+    + Count : int <<get>>
+    + RandomId : int <<get>>
+    + Reset() : void
+}
+@enduml

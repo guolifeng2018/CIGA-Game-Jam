@@ -1,0 +1,8 @@
+@startuml
+abstract class "MonoSingleton`2"<TSingleton,TProvider> {
+    + {static} IsOnDestroying : bool <<get>>
+    + {static} IsCreatedByProvider : bool <<get>>
+    + {static} Instance : TSingleton <<get>>
+}
+MonoBehaviour <|-- "MonoSingleton`2"
+@enduml

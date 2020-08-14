@@ -1,0 +1,8 @@
+@startuml
+class "ScriptableResourceSingletonProvider`1"<TSingleton> {
+    + <<override>> ProvideSingleton() : TSingleton
+    + <<virtual>> SingletonResourcePath : string <<get>>
+}
+"ScriptableSingletonProvider`1" "<TSingleton>" <|-- "ScriptableResourceSingletonProvider`1"
+IResourceSingletonProvider <|-- "ScriptableResourceSingletonProvider`1"
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class WaitUtil <<static>> {
+    + {static} WaitForTime(time:float, action:System.Action) : IEnumerator
+    + {static} WaitForRealTime(time:float, action:System.Action) : IEnumerator
+    + {static} WaitForFrame(frameCount:int, action:System.Action) : IEnumerator
+    + {static} WaitWhile(predicate:System.Func<bool>, action:System.Action) : IEnumerator
+    + {static} WaitUntil(predicate:System.Func<bool>, action:System.Action) : IEnumerator
+    + {static} WaitForYield(enumerator:IEnumerator, action:System.Action) : IEnumerator
+    + {static} WaitForYield(yieldInst:YieldInstruction, action:System.Action) : IEnumerator
+}
+@enduml

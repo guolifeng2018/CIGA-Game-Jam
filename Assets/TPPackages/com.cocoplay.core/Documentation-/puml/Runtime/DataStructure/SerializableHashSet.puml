@@ -1,0 +1,8 @@
+@startuml
+class "SerializableHashSet`1"<T> {
+    + OnBeforeSerialize() : void
+    + OnAfterDeserialize() : void
+}
+"HashSet`1" "<T>" <|-- "SerializableHashSet`1"
+ISerializationCallbackReceiver <|-- "SerializableHashSet`1"
+@enduml

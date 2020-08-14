@@ -1,0 +1,8 @@
+@startuml
+class EnumFlagAttribute {
+    + <<readonly>> DisplayName : string
+    + EnumFlagAttribute()
+    + EnumFlagAttribute(name:string)
+}
+PropertyAttribute <|-- EnumFlagAttribute
+@enduml

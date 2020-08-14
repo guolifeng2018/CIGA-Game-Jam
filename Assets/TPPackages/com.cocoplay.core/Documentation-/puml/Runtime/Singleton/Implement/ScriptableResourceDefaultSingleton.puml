@@ -1,0 +1,5 @@
+@startuml
+abstract class "ScriptableResourceDefaultSingleton`1"<TSingleton> {
+}
+"ScriptableSingleton`2" "<TSingleton,ScriptableResourceSingletonProvider<TSingleton>>" <|-- "ScriptableResourceDefaultSingleton`1"
+@enduml

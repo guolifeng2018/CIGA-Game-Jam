@@ -1,0 +1,20 @@
+@startuml
+class RayUtil <<static>> {
+    + {static} GetRayByScreenPos(camera:Camera, screenPos:Vector3) : Ray
+    + {static} GetRayByViewPort(camera:Camera, viewPort:Vector3) : Ray
+    + {static} GetRayByWorldPos(camera:Camera, worldPos:Vector3) : Ray
+    + {static} RaycastByScreenPos(camera:Camera, screenPos:Vector3, hit:RaycastHit, maxDistance:float, layerMask:int) : bool
+    + {static} RaycastByScreenPos(camera:Camera, screenPos:Vector3, maxDistance:float, layerMask:int) : Collider
+    + {static} RaycastByViewPort(camera:Camera, viewPort:Vector3, hit:RaycastHit, maxDistance:float, layerMask:int) : bool
+    + {static} RaycastByViewPort(camera:Camera, viewPort:Vector3, maxDistance:float, layerMask:int) : Collider
+    + {static} RaycastByWorldPos(camera:Camera, worldPos:Vector3, hit:RaycastHit, maxDistance:float, layerMask:int) : bool
+    + {static} RaycastByWorldPos(camera:Camera, worldPos:Vector3, maxDistance:float, layerMask:int) : Collider
+    + {static} Raycast(ray:Ray, maxDistance:float, layerMask:int) : Collider
+    + {static} GetWorldPosByX(ray:Ray, worldPosX:float) : Vector3
+    + {static} GetWorldPosByX(camera:Camera, screenPos:Vector3, worldPosX:float) : Vector3
+    + {static} GetWorldPosByY(ray:Ray, worldPosY:float) : Vector3
+    + {static} GetWorldPosByY(camera:Camera, screenPos:Vector3, worldPosY:float) : Vector3
+    + {static} GetWorldPosByZ(ray:Ray, worldPosZ:float) : Vector3
+    + {static} GetWorldPosByZ(camera:Camera, screenPos:Vector3, worldPosZ:float) : Vector3
+}
+@enduml

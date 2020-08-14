@@ -1,0 +1,14 @@
+@startuml
+!include ./Widget/EditorBoolPref.puml
+!include ./Property/OptionalValueDrawer.puml
+!include ./Property/EnumFlagDrawer.puml
+!include ./Property/RangeValueDrawer.puml
+!include ./Menu/FindMissingScriptsRecursively.puml
+!include ./Menu/FindReferencesInProject.puml
+!include ./Menu/CleanEmptyFolders.puml
+!include ./Debug/DebugSettingsInspector.puml
+!include ./Debug/DebugMenuItems.puml
+!include ./Debug/ModuleDebugSettingsDrawer.puml
+!include ./Utility/AssetEditorUtil.puml
+!include ./Utility/EditorPreferences.puml
+@enduml

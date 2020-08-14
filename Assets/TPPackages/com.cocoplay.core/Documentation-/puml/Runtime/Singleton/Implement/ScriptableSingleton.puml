@@ -1,0 +1,6 @@
+@startuml
+abstract class "ScriptableSingleton`2"<TSingleton,TProvider> {
+    + {static} Instance : TSingleton <<get>>
+}
+ScriptableObject <|-- "ScriptableSingleton`2"
+@enduml

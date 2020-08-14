@@ -1,0 +1,6 @@
+@startuml
+class MathUtil <<static>> {
+    + {static} Approximately(v1:float, v2:float, errorRange:float) : bool
+    + {static} WrapAngle(angle:float) : float
+}
+@enduml

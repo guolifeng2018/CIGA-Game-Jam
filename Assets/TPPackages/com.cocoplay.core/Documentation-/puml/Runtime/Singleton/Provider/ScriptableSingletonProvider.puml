@@ -1,0 +1,6 @@
+@startuml
+class "ScriptableSingletonProvider`1"<TSingleton> {
+    + <<virtual>> ProvideSingleton() : TSingleton
+}
+"ISingletonProvider`1" "<TSingleton>" <|-- "ScriptableSingletonProvider`1"
+@enduml

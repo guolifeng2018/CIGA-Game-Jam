@@ -1,0 +1,9 @@
+@startuml
+class DictionaryExtensions <<static>> {
+    + {static} GetValue(dict:Dictionary<TKey, TValue>, key:TKey) : TValue
+    + {static} GetOrAddNewValue(dict:Dictionary<TKey, TValue>, key:TKey) : TValue
+    + {static} GetOrAddDefaultValue(dict:Dictionary<TKey, TValue>, key:TKey) : TValue
+    + {static} ForEach(dict:Dictionary<TKey, TValue>, action:Action<TKey, TValue>) : void
+    + {static} ForEach(dict:Dictionary<TKey, TValue>, action:Action<TValue>) : void
+}
+@enduml

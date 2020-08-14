@@ -1,0 +1,5 @@
+@startuml
+interface "ISingletonProvider`1"<TSingleton> {
+    ProvideSingleton() : TSingleton
+}
+@enduml

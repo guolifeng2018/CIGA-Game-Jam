@@ -1,0 +1,6 @@
+@startuml
+class "ComponentSingletonProvider`1"<TSingleton> {
+    + <<virtual>> ProvideSingleton() : TSingleton
+}
+"ISingletonProvider`1" "<TSingleton>" <|-- "ComponentSingletonProvider`1"
+@enduml

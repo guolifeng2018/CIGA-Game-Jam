@@ -1,0 +1,5 @@
+@startuml
+abstract class "MonoResourceDefaultSingleton`1"<TSingleton> {
+}
+"MonoSingleton`2" "<TSingleton,ResourceComponentSingletonProvider<TSingleton>>" <|-- "MonoResourceDefaultSingleton`1"
+@enduml

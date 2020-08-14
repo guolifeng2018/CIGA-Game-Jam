@@ -1,0 +1,5 @@
+@startuml
+class EnumUtil <<static>> {
+    + {static} ToEnum(value:string, result:TEnum) : bool
+}
+@enduml

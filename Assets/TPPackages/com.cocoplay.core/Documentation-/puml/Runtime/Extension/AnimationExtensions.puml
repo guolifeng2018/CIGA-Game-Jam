@@ -1,0 +1,7 @@
+@startuml
+class AnimationExtensions <<static>> {
+    + {static} GetAnimState(anim:Animation, clipName:string) : AnimationState
+    + {static} Sample(anim:Animation, time:float, clipName:string, normalized:bool) : void
+    + {static} Sample(animator:Animator, time:float, stateName:string, normalized:bool) : void
+}
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class EditorPreferences <<static>> {
+    + <<const>> MENU_NAME_ASSETS : string = "Assets/"
+    + <<const>> MENU_NAME_ROOT : string = "TC/"
+    + <<const>> MENU_NAME_COMMON : string
+    + <<const>> MENU_NAME_DEBUG : string
+    + <<const>> MENU_PRIORITY_COMMON : int = 0
+    + <<const>> MENU_PRIORITY_DEBUG : int = 10
+    + <<const>> MENU_PRIORITY_MAX : int = 2000
+}
+@enduml

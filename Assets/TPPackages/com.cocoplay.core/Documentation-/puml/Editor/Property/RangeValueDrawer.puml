@@ -1,0 +1,14 @@
+@startuml
+class RangeValueDrawer {
+    + <<override>> OnGUI(position:Rect, property:SerializedProperty, label:GUIContent) : void
+}
+class RangeVector2Drawer {
+    + <<override>> GetPropertyHeight(property:SerializedProperty, label:GUIContent) : float
+}
+class RangeVector3Drawer {
+    + <<override>> GetPropertyHeight(property:SerializedProperty, label:GUIContent) : float
+}
+PropertyDrawer <|-- RangeValueDrawer
+RangeValueDrawer <|-- RangeVector2Drawer
+RangeValueDrawer <|-- RangeVector3Drawer
+@enduml

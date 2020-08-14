@@ -1,0 +1,6 @@
+@startuml
+class EditorBoolPref {
+    + EditorBoolPref(name:string, defaultValue:bool)
+    + Value : bool <<get>> <<set>>
+}
+@enduml

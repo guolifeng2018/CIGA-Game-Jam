@@ -1,0 +1,4 @@
+@startuml
+class CleanEmptyFolders <<static>> {
+}
+@enduml

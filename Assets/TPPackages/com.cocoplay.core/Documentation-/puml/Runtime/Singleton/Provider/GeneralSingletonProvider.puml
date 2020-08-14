@@ -1,0 +1,6 @@
+@startuml
+class "GeneralSingletonProvider`1"<TSingleton> {
+    + <<virtual>> ProvideSingleton() : TSingleton
+}
+"ISingletonProvider`1" "<TSingleton>" <|-- "GeneralSingletonProvider`1"
+@enduml

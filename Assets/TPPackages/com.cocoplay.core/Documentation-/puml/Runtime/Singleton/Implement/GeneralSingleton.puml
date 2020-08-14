@@ -1,0 +1,5 @@
+@startuml
+abstract class "GeneralSingleton`2"<TSingleton,TProvider> {
+    + {static} Instance : TSingleton <<get>>
+}
+@enduml

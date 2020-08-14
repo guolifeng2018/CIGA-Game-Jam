@@ -1,0 +1,11 @@
+{
+    "downLoadList": [
+        {
+            "id": 0,
+            "name": "Test",
+            "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTUOqOdD7BCog_uwAJ25hWUl0gqm4zqpTjCe-MxFYWN5CDUKHbwSQ7WPcSOQoHpiv77qrBfNc0__yMV/pub?output=csv",
+            "jsonPath": "/Users/guolifeng/main/projects/CIGA-Game-Jam/Assets/Arts/Resources/Config/Test.json",
+            "csPath": "/Users/guolifeng/main/projects/CIGA-Game-Jam/Assets/Scripts/Config/Test.cs"
+        }
+    ]
+}

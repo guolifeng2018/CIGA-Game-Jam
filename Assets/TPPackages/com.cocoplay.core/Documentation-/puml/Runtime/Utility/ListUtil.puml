@@ -1,0 +1,7 @@
+@startuml
+class ListUtil <<static>> {
+    + {static} Create(count:int, value:T) : List<T>
+    + {static} CreateArray(count:int, value:T) : T[]
+    + {static} GetRandomItem(list:IList<T>) : T
+}
+@enduml

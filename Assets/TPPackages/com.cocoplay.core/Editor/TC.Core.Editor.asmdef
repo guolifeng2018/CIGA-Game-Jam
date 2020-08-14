@@ -1,0 +1,12 @@
+{
+    "name": "TC.Core.Editor",
+    "references": [
+        "TC.Core.Runtime"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}

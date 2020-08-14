@@ -1,0 +1,8 @@
+@startuml
+class "SerializableDictionary`2"<TKey,TValue> {
+    + OnBeforeSerialize() : void
+    + OnAfterDeserialize() : void
+}
+"Dictionary`2" "<TKey,TValue>" <|-- "SerializableDictionary`2"
+ISerializationCallbackReceiver <|-- "SerializableDictionary`2"
+@enduml

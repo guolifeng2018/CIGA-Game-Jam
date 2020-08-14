@@ -1,0 +1,5 @@
+@startuml
+class EnumExtensions <<static>> {
+    + {static} ToEnum(value:string, result:TEnum) : bool
+}
+@enduml

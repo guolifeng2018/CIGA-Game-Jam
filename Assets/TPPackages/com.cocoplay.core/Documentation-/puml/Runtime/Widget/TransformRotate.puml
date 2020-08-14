@@ -1,0 +1,16 @@
+@startuml
+class TransformRotate {
+    + speed : float = 10
+    + axis : AroundAxis
+    + relativeTo : Space
+    Update() : void
+}
+enum AroundAxis {
+    Non,
+    X,
+    Y,
+    Z,
+}
+MonoBehaviour <|-- TransformRotate
+TransformRotate +-- AroundAxis
+@enduml
