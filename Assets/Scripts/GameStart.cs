@@ -6,9 +6,9 @@ public class GameStart : MonoBehaviour
 {
     void Start()
     {
+        Character character = FindObjectOfType<Character>();
+        OpenWorld openWorld = FindObjectOfType<OpenWorld>();
 
-        Test test = GLDCfgMgr.Instance.GetConfigData<Test>("Test");
-        Debug.LogError(test._datas[0].id + "            " + test._datas[0].name + "            " + test._datas[0].value);
-
+        LeanTween.delayedCall(2f, o => { openWorld.OpenTheWorld((() => { character.m_canInput = true; })); });
     }
 }

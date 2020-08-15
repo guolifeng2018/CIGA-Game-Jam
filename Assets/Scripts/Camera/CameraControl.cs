@@ -11,7 +11,7 @@ public class CameraControl : MonoBehaviour
     public float RightPosition;
     public float MoveSpeed;
 
-    public Vector3 m_positionOffset = new Vector3(-1.39f, -2.06f, 0f);
+    public Vector3 m_positionOffset = new Vector3(-2.42f, -1.82f, 10f);
     
     void Start()
     {
