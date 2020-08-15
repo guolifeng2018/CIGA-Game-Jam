@@ -13,6 +13,11 @@ public class Character : MonoBehaviour
     private List<InteractionScript> m_interactionItems = new List<InteractionScript>();
 
     private InteractionScript m_carryItem;
+    
+    public InteractionScript CarryItem
+    {
+        get { return m_carryItem; }
+    }
 
     public bool m_canInput = false;
     
@@ -50,7 +55,7 @@ public class Character : MonoBehaviour
             PlayAnimation(animName, m_movement.x, m_recordY);
         }
 
-        if (m_canInteraction && m_interactionItems.Count > 0)
+        if (m_interactionItems.Count > 0)
         {
             //交互
             if (Input.GetKeyDown(KeyCode.Space))
@@ -112,7 +117,6 @@ public class Character : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        m_canInteraction = true;
         if (other != null && other.gameObject.layer == LayerMask.NameToLayer("InteractiveItem"))
         {
             InteractionScript script = other.gameObject.GetComponent<InteractionScript>();
@@ -126,7 +130,6 @@ public class Character : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        m_canInteraction = false;
         if (other != null && other.gameObject.layer == LayerMask.NameToLayer("InteractiveItem"))
         {
             InteractionScript script = other.gameObject.GetComponent<InteractionScript>();
@@ -136,5 +139,10 @@ public class Character : MonoBehaviour
                 script.SetOutLine(false);
             }
         }
+    }
+
+    public void DropCarryItem()
+    {
+        m_carryItem = null;
     }
 }

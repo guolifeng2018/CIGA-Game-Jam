@@ -2,15 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum InteractionType
+{
+    Door = 0x1,
+    Key = 0x2,
+    Bed = 0x4,
+    Art = 0x8,
+    Cabinet = 0x10,
+    Clock = 0x20,
+    ArtTable = 0x40,
+    Box = 0x80,
+    Flower = 0x100,
+    Refrigerator = 0x200,
+    BookCase = 0x400,
+    Block = 0x800,
+    Hole = 0x1000,
+    Weights = 0x2000,
+}
+
 public class InteractionScript : MonoBehaviour
 {
-    private Transform m_parent;
-    private SpriteRenderer m_render;
-    private BoxCollider2D m_collider2D;
-    private Material m_defaultMaterial;
-    private static Material m_outLineMaterial;
-    private float m_recordY;
-    private int m_recordSortLayer;
+    public InteractionType m_type;
+    protected Transform m_parent;
+    protected SpriteRenderer m_render;
+    protected BoxCollider2D m_collider2D;
+    protected Material m_defaultMaterial;
+    public static Material m_outLineMaterial;
+    protected float m_recordY;
+    protected int m_recordSortLayer;
 
     public bool m_canPick;
     public bool m_canShowOutline = true;
@@ -28,6 +47,13 @@ public class InteractionScript : MonoBehaviour
         transform.position = position;
 
         LoadOutlineMaterial();
+
+        OnStart();
+    }
+
+    protected virtual void OnStart()
+    {
+        
     }
 
     public void SetOutLine(bool outline)
@@ -48,7 +74,7 @@ public class InteractionScript : MonoBehaviour
         }
     }
 
-    public void TriggerEnterAction()
+    public virtual void TriggerEnterAction()
     {
         Debug.LogError("Trigger Interaction");
     }
@@ -66,7 +92,7 @@ public class InteractionScript : MonoBehaviour
         //LeanTween.moveLocal(gameObject, Vector3.zero, 0.3f).setEaseInOutSine();
     }
 
-    public void DropDownItem(Transform character)
+    public virtual void DropDownItem(Transform character)
     {
         LeanTween.moveY(gameObject, m_recordY, 0.3f).setEaseOutBounce().setOnComplete((o =>
         {
