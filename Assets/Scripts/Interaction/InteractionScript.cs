@@ -68,14 +68,11 @@ public class InteractionScript : MonoBehaviour
 
     public void DropDownItem(Transform character)
     {
-        Vector3 position = new Vector3(character.position.x, m_recordY, 0f);
-        transform.parent = m_parent;
-        // m_render.sortingOrder = m_recordSortLayer;
-        // gameObject.transform.position = position;
-        // m_collider2D.enabled = true;
-        LeanTween.move(gameObject, position, 0.3f).setEaseOutBounce().setOnComplete((o =>
+        LeanTween.moveY(gameObject, m_recordY, 0.3f).setEaseOutBounce().setOnComplete((o =>
         {
+            transform.parent = m_parent;
             m_render.sortingOrder = m_recordSortLayer;
+            Vector3 position = new Vector3(character.position.x, m_recordY, 0f);
             gameObject.transform.position = position;
             m_collider2D.enabled = true;
         }));
