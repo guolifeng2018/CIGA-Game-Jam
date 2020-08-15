@@ -18,6 +18,7 @@ public enum InteractionType
     Block = 0x800,
     Hole = 0x1000,
     Weights = 0x2000,
+    Knife = 0x4000,
 }
 
 public class InteractionScript : MonoBehaviour
@@ -76,10 +77,9 @@ public class InteractionScript : MonoBehaviour
 
     public virtual void TriggerEnterAction()
     {
-        Debug.LogError("Trigger Interaction");
     }
 
-    public void PickUpItem(Transform parent)
+    public virtual void PickUpItem(Transform parent)
     {
         m_recordY = transform.position.y;
         transform.parent = parent;
