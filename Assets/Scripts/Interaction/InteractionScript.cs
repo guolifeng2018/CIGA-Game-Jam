@@ -101,6 +101,10 @@ public class InteractionScript : MonoBehaviour
 
     public virtual void DropDownItem(Transform character)
     {
+        if (m_type == InteractionType.Key && GameSceneManager.Instance.m_sceneName == "Level3")
+        {
+            m_recordY = -0.45f;
+        }
         LeanTween.moveY(gameObject, m_recordY, 0.3f).setEaseOutBounce().setOnComplete((o =>
         {
             transform.parent = m_parent;

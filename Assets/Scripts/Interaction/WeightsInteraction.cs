@@ -9,19 +9,28 @@ public class WeightsInteraction : InteractionScript
     {
         base.OnStart();
         m_rigidBody2D = GetComponent<Rigidbody2D>();
-        m_rigidBody2D.isKinematic = false;
+        if (m_rigidBody2D != null)
+        {
+            m_rigidBody2D.isKinematic = false;
+        }
     }
 
     public override void PickUpItem(Transform parent)
     {
         base.PickUpItem(parent);
 
-        m_rigidBody2D.isKinematic = true;
+        if (m_rigidBody2D != null)
+        {       
+            m_rigidBody2D.isKinematic = true;
+        }
     }
 
     public override void DropDownItem(Transform character)
     {
-        m_rigidBody2D.isKinematic = false;
+        if (m_rigidBody2D != null)
+        {
+            m_rigidBody2D.isKinematic = false;
+        }
         LeanTween.moveY(gameObject, m_recordY, 0.3f).setEaseInCirc().setOnComplete((o =>
         {
             transform.parent = m_parent;

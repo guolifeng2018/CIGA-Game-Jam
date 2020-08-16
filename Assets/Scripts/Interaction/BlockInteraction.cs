@@ -7,6 +7,8 @@ public class BlockInteraction : InteractionScript
     public InteractionScript m_key;
 
     public bool m_openState = false;
+
+    public BlockHoleInteraction m_holeInteraction;
     
     protected override void OnStart()
     {
@@ -52,6 +54,7 @@ public class BlockInteraction : InteractionScript
                     LeanTween.moveLocal(gameObject, new Vector3(0.24f, 0.09f, 0f), 0.3f).setEaseInOutSine().setOnComplete((o =>
                     {
                         m_key.gameObject.SetActive(false);
+                        m_holeInteraction.m_isClose = true;
                     }));
                     knife.SetOutLine(false);
                     knife.enabled = false;

@@ -1579,7 +1579,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1900080024, guid: 52022f41e144746abbfddd8656efcba1, type: 3}
       propertyPath: m_sceneName
-      value: Level4
+      value: Level5
       objectReference: {fileID: 0}
     - target: {fileID: 780735865913460778, guid: 52022f41e144746abbfddd8656efcba1,
         type: 3}
@@ -2174,3 +2174,4 @@ MonoBehaviour:
   m_canPick: 0
   m_canShowOutline: 1
   m_key: {fileID: 2006033103}
+  m_openState: 0

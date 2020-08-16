@@ -818,6 +818,8 @@ MonoBehaviour:
   m_canPick: 0
   m_canShowOutline: 1
   m_key: {fileID: 1904650987}
+  m_openState: 0
+  m_holeInteraction: {fileID: 0}
 --- !u!1 &1808013538
 GameObject:
   m_ObjectHideFlags: 0

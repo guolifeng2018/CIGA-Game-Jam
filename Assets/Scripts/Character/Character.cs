@@ -10,6 +10,9 @@ public class Character : MonoBehaviour
     private SpriteRenderer m_render;
     public GameObject m_pickNode;
 
+    public CanvasGroup m_group;
+    public GameObject m_image;
+
     private List<InteractionScript> m_interactionItems = new List<InteractionScript>();
 
     private InteractionScript m_carryItem;
@@ -124,6 +127,7 @@ public class Character : MonoBehaviour
     {
         m_rigidBody2D.MovePosition(m_rigidBody2D.position + m_movement * m_moveSpeed * Time.deltaTime);
         Vector3 position = transform.position;
+        position.x = Mathf.Clamp(position.x, -7.25f, 11.13f);
         position.z = -position.y;
         transform.position = position;
     }
@@ -157,6 +161,15 @@ public class Character : MonoBehaviour
             {
                 m_interactionItems.Add(script);
                 script.SetOutLine(true);
+            }
+        }
+
+        if (other != null)
+        {
+            AintAttack aintAttack = other.GetComponent<AintAttack>();
+            if (aintAttack != null)
+            {
+                GameSceneManager.Instance.LoadScene("Empty");
             }
         }
     }

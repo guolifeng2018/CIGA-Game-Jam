@@ -18,8 +18,11 @@ public class BookCaseInteraction : InteractionScript
         
         m_downPosition = new Vector3(1.29f, 2.07f, 0f);
         m_originPosition = transform.localPosition;
-        
-        m_book.gameObject.SetActive(false);
+
+        if (m_book != null)
+        {
+            m_book.gameObject.SetActive(false);
+        }
     }
     
     public override bool TriggerEnterAction()

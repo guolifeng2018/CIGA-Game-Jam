@@ -578,6 +578,7 @@ MonoBehaviour:
   m_aintAttack: {fileID: 1185915504}
   m_x: 1.45
   m_y: -0.86
+  m_isClose: 0
 --- !u!1 &557741837
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,6 +679,7 @@ MonoBehaviour:
   m_aintAttack: {fileID: 1320917346}
   m_x: -4.52
   m_y: -0.95
+  m_isClose: 0
 --- !u!1 &670963282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1333,6 +1335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87cfceca379a4ceda8d381f340979e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_attack: 0
 --- !u!61 &1185915505
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1475,6 +1478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87cfceca379a4ceda8d381f340979e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_attack: 0
 --- !u!61 &1320917347
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1743,7 +1747,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.7692308, y: 0.53846157}
+    oldSize: {x: 0.9230769, y: 0.6923077}
     newSize: {x: 0.7692308, y: 0.7692308}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1791,7 +1795,7 @@ SpriteRenderer:
   m_SortingLayerID: 702035913
   m_SortingLayer: 1
   m_SortingOrder: -5
-  m_Sprite: {fileID: 21300000, guid: 6d5c1429614fa47c9947b41e2c7fb0ff, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5abd5df1de78c4347a5f738dac5b779b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2196,7 +2200,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1900080024, guid: 52022f41e144746abbfddd8656efcba1, type: 3}
       propertyPath: m_sceneName
-      value: Level4
+      value: Level6
       objectReference: {fileID: 0}
     - target: {fileID: 780735865913460778, guid: 52022f41e144746abbfddd8656efcba1,
         type: 3}
@@ -2710,6 +2714,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.42
       objectReference: {fileID: 0}
+    - target: {fileID: 3395957012193587916, guid: 52022f41e144746abbfddd8656efcba1,
+        type: 3}
+      propertyPath: m_image
+      value: 
+      objectReference: {fileID: 1864558422}
+    - target: {fileID: 3395957012193587916, guid: 52022f41e144746abbfddd8656efcba1,
+        type: 3}
+      propertyPath: m_group
+      value: 
+      objectReference: {fileID: 34396229}
     - target: {fileID: 4568508000850869491, guid: 52022f41e144746abbfddd8656efcba1,
         type: 3}
       propertyPath: m_Sprite
@@ -3026,6 +3040,7 @@ MonoBehaviour:
   m_canShowOutline: 1
   m_key: {fileID: 1965411559}
   m_openState: 1
+  m_holeInteraction: {fileID: 526522073}
 --- !u!114 &1965411566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3078,6 +3093,7 @@ MonoBehaviour:
   m_type: 8
   m_canPick: 0
   m_canShowOutline: 1
+  m_holeInteraction: {fileID: 557741840}
 --- !u!95 &1965411587
 Animator:
   serializedVersion: 3

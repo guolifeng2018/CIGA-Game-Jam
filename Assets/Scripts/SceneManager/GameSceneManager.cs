@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameSceneManager : MonoDefaultSingleton<GameSceneManager>, ISingletonCreateHandler
 {
+    public string m_sceneName;
     public void OnSingletonCreated()
     {
         
@@ -13,6 +14,7 @@ public class GameSceneManager : MonoDefaultSingleton<GameSceneManager>, ISinglet
 
     public void LoadScene(string sceneName)
     {
+        m_sceneName = sceneName;
         SceneManager.LoadScene (sceneName);
     }
 }

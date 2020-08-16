@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,6 +15,12 @@ public class CaseKeyInteraction : InteractionScript
     private void HandleBookCaseDown(params object[] args)
     {
         GlobalEvent.AddEvent("WeightDropDown", HandleDropDownLogic);
+    }
+
+    private void OnDestroy()
+    {
+        GlobalEvent.RemoveEvent("BookCaseDown", HandleBookCaseDown);
+        GlobalEvent.RemoveEvent("WeightDropDown", HandleDropDownLogic);
     }
 
     private void HandleDropDownLogic(params object[] args)
