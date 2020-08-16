@@ -6,6 +6,8 @@ public class BookCaseInteraction : InteractionScript
 {
     public Vector3 m_downPosition;
     public Vector3 m_originPosition;
+
+    public GameObject m_bookSlot;
     
     protected override void OnStart()
     {
@@ -32,11 +34,15 @@ public class BookCaseInteraction : InteractionScript
     
     private void TriggerWithBook(InteractionScript script)
     {
-        script.gameObject.SetActive(true);
-        script.transform.parent = transform;
-        script.transform.localPosition = Vector3.zero;
+        // 
+        // script.transform.parent = transform;
+        // script.transform.localPosition = Vector3.zero;
+        
+        m_bookSlot.SetActive(true);
+        
         Character character = FindObjectOfType<Character>();
         character.DropCarryItem();
+        script.gameObject.SetActive(false);
 
         LeanTween.moveLocal(gameObject, m_downPosition, 0.3f).setEaseInOutSine().setOnComplete((o =>
         {

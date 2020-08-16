@@ -20,6 +20,8 @@ public enum InteractionType
     Weights = 0x2000,
     Knife = 0x4000,
     Book = 0x8000,
+    Casekey = 0x10000,
+    BabyBear = 0x20000,
 }
 
 public class InteractionScript : MonoBehaviour
