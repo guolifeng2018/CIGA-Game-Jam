@@ -34,4 +34,12 @@ public class CaseKeyInteraction : InteractionScript
         
         GlobalEvent.DispatchEvent("Cellar_Open");
     }
+
+    public override void DropDownItem(Transform character)
+    {
+        base.DropDownItem(character);
+
+        Character player = FindObjectOfType<Character>();
+        player.PlayAudio("key_knife_drop");
+    }
 }

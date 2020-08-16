@@ -25,6 +25,9 @@ public class WoodBoxInteraction : InteractionScript
 
             m_key.gameObject.SetActive(true);
             m_canShowOutline = false;
+
+            Character character = FindObjectOfType<Character>();
+            character.PlayAudio("wood_broken");
         }
     }
 }

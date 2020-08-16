@@ -101,9 +101,12 @@ public class InteractionScript : MonoBehaviour
 
     public virtual void DropDownItem(Transform character)
     {
-        if (m_type == InteractionType.Key && GameSceneManager.Instance.m_sceneName == "Level3")
+        if (m_type == InteractionType.Key)
         {
-            m_recordY = -0.45f;
+            m_recordY = -2f;
+            
+            Character player = FindObjectOfType<Character>();
+            player.PlayAudio("key_knife_drop");
         }
         LeanTween.moveY(gameObject, m_recordY, 0.3f).setEaseOutBounce().setOnComplete((o =>
         {

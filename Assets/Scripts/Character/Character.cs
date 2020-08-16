@@ -16,6 +16,11 @@ public class Character : MonoBehaviour
     private List<InteractionScript> m_interactionItems = new List<InteractionScript>();
 
     private InteractionScript m_carryItem;
+
+    private AudioListener m_listener;
+    private AudioSource m_music;
+    private AudioSource m_sound;
+    private AudioSource m_footAudio;
     
     public InteractionScript CarryItem
     {
@@ -37,6 +42,22 @@ public class Character : MonoBehaviour
         m_rigidBody2D = GetComponent<Rigidbody2D>();
         m_render = GetComponent<SpriteRenderer>();
         m_animator = GetComponent<Animator>();
+        m_listener = gameObject.AddComponent<AudioListener>();
+        m_music = gameObject.AddComponent<AudioSource>();
+        m_sound = gameObject.AddComponent<AudioSource>();
+        m_footAudio = gameObject.AddComponent<AudioSource>();
+        m_music.loop = true;
+        m_music.clip = Resources.Load<AudioClip>("Audio/music/ghost_sigh");
+        //m_music.Play();
+
+        m_footAudio.clip = Resources.Load<AudioClip>("Audio/sound/walking_on_a_floor");
+        m_footAudio.loop = true;
+    }
+
+    public void PlayAudio(string name)
+    {
+        m_sound.clip = Resources.Load<AudioClip>(string.Format("Audio/sound/{0}", name));
+        m_sound.Play();
     }
 
     public void Update()
@@ -49,11 +70,13 @@ public class Character : MonoBehaviour
         if (m_movement == Vector2.zero)
         {
             string animName = m_carryItem != null ? "Pick_Idle" : "Idle";
+            m_footAudio.Stop();
             PlayAnimation(animName, m_movement.x, m_recordY);
         }
         else
         {
             m_recordY = m_movement.y;
+            m_footAudio.Play();
             string animName = m_carryItem != null ? "Pick_Walk" : "Walk";
             PlayAnimation(animName, m_movement.x, m_recordY);
         }

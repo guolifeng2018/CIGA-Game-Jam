@@ -46,6 +46,7 @@ public class DoorInteraction : InteractionScript
         script.gameObject.SetActive(false);
         Character character = FindObjectOfType<Character>();
         character.DropCarryItem();
+        character.PlayAudio("key_interaction");
 
         m_doorOpened = true;
     }

@@ -41,6 +41,9 @@ public class WeightsInteraction : InteractionScript
             
             GlobalEvent.DispatchEvent("WeightDropDown");
             GlobalEvent.DispatchEvent("ShakeCamera");
+
+            Character player = FindObjectOfType<Character>();
+            player.PlayAudio("weight_drop_down");
         }));
     }
 }

@@ -43,6 +43,7 @@ public class BoxInteraction : InteractionScript
             script.gameObject.SetActive(false);
             Character character = FindObjectOfType<Character>();
             character.DropCarryItem();
+            character.PlayAudio("key_interaction");
 
             m_key.gameObject.SetActive(true);
             LeanTween.moveLocalX(m_key.gameObject, -3.05f, 0.5f).setEaseInOutSine();

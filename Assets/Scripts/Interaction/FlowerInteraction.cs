@@ -45,7 +45,9 @@ public class FlowerInteraction : InteractionScript
                         m_key.transform.localPosition = transform.localPosition;
                         m_key.gameObject.SetActive(true);
                     }
-                    
+
+                    Character character = FindObjectOfType<Character>();
+                    character.PlayAudio("vase_broken");
                 }));
             
             

@@ -39,6 +39,9 @@ public class KnifeInteraction : InteractionScript
             gameObject.transform.position = position;
             m_collider2D.enabled = true;
 
+            Character player = FindObjectOfType<Character>();
+            player.PlayAudio("key_knife_drop");
+
             SwitchKnifeSlot();
         }));
     }
