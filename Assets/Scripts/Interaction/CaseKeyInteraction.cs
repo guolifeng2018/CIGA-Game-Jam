@@ -20,12 +20,12 @@ public class CaseKeyInteraction : InteractionScript
     private void OnDestroy()
     {
         GlobalEvent.RemoveEvent("BookCaseDown", HandleBookCaseDown);
-        GlobalEvent.RemoveEvent("WeightDropDown", HandleDropDownLogic);
     }
 
     private void HandleDropDownLogic(params object[] args)
     {
         LeanTween.moveLocal(gameObject, new Vector3(-2.692f, -0.58f, 0f), 0.5f).setEaseInOutSine();
+        GlobalEvent.RemoveEvent("WeightDropDown", HandleDropDownLogic);
     }
 
     public override void PickUpItem(Transform parent)
