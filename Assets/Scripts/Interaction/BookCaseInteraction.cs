@@ -46,9 +46,10 @@ public class BookCaseInteraction : InteractionScript
         character.DropCarryItem();
         script.gameObject.SetActive(false);
 
-        LeanTween.moveLocal(gameObject, m_downPosition, 0.3f).setEaseInOutSine().setOnComplete((o =>
-        {
-            GlobalEvent.DispatchEvent("BookCaseDown");
-        }));
+        GlobalEvent.DispatchEvent("BookCaseDown");
+        // LeanTween.moveLocal(gameObject, m_downPosition, 0.3f).setEaseInOutSine().setOnComplete((o =>
+        // {
+        //     GlobalEvent.DispatchEvent("BookCaseDown");
+        // }));
     }
 }
