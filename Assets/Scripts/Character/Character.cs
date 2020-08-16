@@ -50,7 +50,7 @@ public class Character : MonoBehaviour
         m_music.clip = Resources.Load<AudioClip>("Audio/music/ghost_sigh");
         //m_music.Play();
 
-        m_footAudio.clip = Resources.Load<AudioClip>("Audio/sound/walking_on_a_floor");
+        m_footAudio.clip = Resources.Load<AudioClip>("Audio/sound/step");
         m_footAudio.loop = true;
     }
 
