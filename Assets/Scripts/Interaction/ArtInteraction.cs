@@ -23,6 +23,8 @@ public class ArtInteraction : InteractionScript
     private void HandleBookCaseDown(params object[] args)
     {
         LeanTween.moveLocalX(gameObject, -1.56f, 0.3f).setEaseInOutSine();
+        Character character = FindObjectOfType<Character>();
+        character.PlayAudio("art_move");
     }
 
     private void HandleBookCaseUp(params object[] args)
@@ -31,5 +33,7 @@ public class ArtInteraction : InteractionScript
             {
                 m_holeInteraction.m_isClose = true;
             }));
+        Character character = FindObjectOfType<Character>();
+        character.PlayAudio("art_move");
     }
 }

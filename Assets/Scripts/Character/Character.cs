@@ -76,7 +76,10 @@ public class Character : MonoBehaviour
         else
         {
             m_recordY = m_movement.y;
-            m_footAudio.Play();
+            if (!m_footAudio.isPlaying)
+            {
+                m_footAudio.Play();
+            }
             string animName = m_carryItem != null ? "Pick_Walk" : "Walk";
             PlayAnimation(animName, m_movement.x, m_recordY);
         }
