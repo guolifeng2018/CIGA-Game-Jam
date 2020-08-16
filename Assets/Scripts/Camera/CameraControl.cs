@@ -16,18 +16,41 @@ public class CameraControl : MonoBehaviour
 
     public float m_shakeDuration = 0.2f;
     public float m_magnitude = 0.1f;
+    private bool m_isLeft;
     
     void Start()
     {
-        m_positionOffset = m_target.transform.position - transform.position;
+        UpdateOffset();
         GlobalEvent.AddEvent("ShakeCamera", ShakeCamera);
+    }
+
+    private void OnDestroy()
+    {
+        GlobalEvent.RemoveEvent("ShakeCamera", ShakeCamera);
     }
 
     private void FixedUpdate()
     {
         Vector3 toPosition = CalculateCameraPosition();
         toPosition.x = Mathf.Clamp(toPosition.x, LeftPosition, RightPosition);
+        toPosition.y = -0.1337692f;
         transform.position = Vector3.Slerp(transform.position, toPosition, Time.deltaTime * MoveSpeed);
+
+        UpdateOffset();
+    }
+
+    private void UpdateOffset()
+    {
+        if (m_positionOffset.x > 0 && !m_isLeft)
+        {
+            m_positionOffset = m_target.transform.position - transform.position;
+            m_isLeft = true;
+        }
+        else if (m_positionOffset.x < 0 && m_isLeft)
+        {
+            m_positionOffset = m_target.transform.position - transform.position;
+            m_isLeft = false;
+        }
     }
 
     private Vector3 CalculateCameraPosition()
@@ -42,6 +65,12 @@ public class CameraControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.RightShift))
         {
             ShakeCamera();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            Vector3 offset = m_target.transform.position - transform.position;
+            Debug.LogError(offset);
         }
     }
 #endif

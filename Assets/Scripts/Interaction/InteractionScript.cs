@@ -19,6 +19,7 @@ public enum InteractionType
     Hole = 0x1000,
     Weights = 0x2000,
     Knife = 0x4000,
+    Book = 0x8000,
 }
 
 public class InteractionScript : MonoBehaviour

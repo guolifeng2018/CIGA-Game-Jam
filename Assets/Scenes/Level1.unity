@@ -288,6 +288,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1900080024, guid: 52022f41e144746abbfddd8656efcba1, type: 3}
+      propertyPath: m_sceneName
+      value: Level2
+      objectReference: {fileID: 0}
     - target: {fileID: 3395957010770135264, guid: 52022f41e144746abbfddd8656efcba1,
         type: 3}
       propertyPath: m_Name
@@ -568,6 +572,8 @@ MonoBehaviour:
   RightPosition: 6.2
   MoveSpeed: 5
   m_positionOffset: {x: 0, y: 0, z: 0}
+  m_shakeDuration: 0.2
+  m_magnitude: 0.1
 --- !u!20 &1652759050
 Camera:
   m_ObjectHideFlags: 0

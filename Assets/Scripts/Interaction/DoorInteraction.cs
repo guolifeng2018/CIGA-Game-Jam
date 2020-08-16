@@ -7,6 +7,8 @@ public class DoorInteraction : InteractionScript
     private Animator m_aniamtor;
     private bool m_doorOpened;
 
+    public string m_sceneName;
+
     protected override void OnStart()
     {
         base.OnStart();
@@ -30,7 +32,7 @@ public class DoorInteraction : InteractionScript
         {
             if (m_doorOpened)
             {
-                GameSceneManager.Instance.LoadScene("Level2");
+                GameSceneManager.Instance.LoadScene(m_sceneName);
             }
         }
     }
