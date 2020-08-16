@@ -96,6 +96,9 @@ public class InteractionScript : MonoBehaviour
         gameObject.transform.localPosition = Vector3.zero;
         transform.localScale = Vector3.one;
         m_collider2D.enabled = false;
+
+        Character character = FindObjectOfType<Character>();
+        character.PlayAudio("finger_snap");
         //LeanTween.moveLocal(gameObject, Vector3.zero, 0.3f).setEaseInOutSine();
     }
 
