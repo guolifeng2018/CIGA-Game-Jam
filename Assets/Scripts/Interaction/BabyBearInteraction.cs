@@ -14,7 +14,7 @@ public class BabyBearInteraction : InteractionScript
         m_book.gameObject.SetActive(false);
     }
     
-    public override void TriggerEnterAction()
+    public override bool TriggerEnterAction()
     {
         base.TriggerEnterAction();
         
@@ -25,9 +25,11 @@ public class BabyBearInteraction : InteractionScript
             {
                 case InteractionType.Knife:
                     TriggerWithKnife(character.CarryItem);
-                    break;
+                    return true;
             }
         }
+
+        return false;
     }
 
     private void TriggerWithKnife(InteractionScript script)

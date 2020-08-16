@@ -78,8 +78,9 @@ public class InteractionScript : MonoBehaviour
         }
     }
 
-    public virtual void TriggerEnterAction()
+    public virtual bool TriggerEnterAction()
     {
+        return false;
     }
 
     public virtual void PickUpItem(Transform parent)

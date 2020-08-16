@@ -60,22 +60,45 @@ public class Character : MonoBehaviour
             //交互
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                m_interactionItems[0].TriggerEnterAction();
+                for (int i = 0; i < m_interactionItems.Count; i++)
+                {
+                    bool result = m_interactionItems[i].TriggerEnterAction();
+                    if (result)
+                    {
+                        return;
+                    }
+                }
                 return;
             }
 
             if (m_carryItem == null)
             {
-                for (int i = 0; i < m_interactionItems.Count; i++)
+                float distance = float.MaxValue;
+                InteractionScript item = null;
+                if (Input.GetKeyDown(KeyCode.E))
                 {
-                    //捡起、放下
-                    if(m_interactionItems[i].m_canPick && Input.GetKeyDown(KeyCode.E))
+                    for (int i = 0; i < m_interactionItems.Count; i++)
                     {
-                        m_carryItem = m_interactionItems[i];
+                        //捡起、放下
+                        if(m_interactionItems[i].m_canPick)
+                        {
+                            float dis = Vector2.Distance(transform.position, m_interactionItems[i].transform.position);
+                            if (dis < distance)
+                            {
+                                distance = dis;
+                                item = m_interactionItems[i];
+                            }
+                        }
+                    }
+
+                    if (item != null)
+                    {
+                        m_carryItem = item;
                         m_carryItem.PickUpItem(m_pickNode.transform);
                         m_interactionItems.Remove(m_carryItem);
-                        return;
                     }
+                    
+                    return;
                 }
             }
         }

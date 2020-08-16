@@ -15,7 +15,7 @@ public class DoorInteraction : InteractionScript
         m_aniamtor = GetComponent<Animator>();
     }
 
-    public override void TriggerEnterAction()
+    public override bool TriggerEnterAction()
     {
         base.TriggerEnterAction();
         Character character = FindObjectOfType<Character>();
@@ -25,7 +25,7 @@ public class DoorInteraction : InteractionScript
             {
                 case InteractionType.Key:
                     TriggerWithKey(character.CarryItem);
-                    break;
+                    return true;
             }
         }
         else
@@ -33,8 +33,11 @@ public class DoorInteraction : InteractionScript
             if (m_doorOpened)
             {
                 GameSceneManager.Instance.LoadScene(m_sceneName);
+                return true;
             }
         }
+
+        return false;
     }
 
     private void TriggerWithKey(InteractionScript script)

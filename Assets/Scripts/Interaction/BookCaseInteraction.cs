@@ -17,7 +17,7 @@ public class BookCaseInteraction : InteractionScript
         m_originPosition = transform.localPosition;
     }
     
-    public override void TriggerEnterAction()
+    public override bool TriggerEnterAction()
     {
         base.TriggerEnterAction();
         Character character = FindObjectOfType<Character>();
@@ -27,9 +27,11 @@ public class BookCaseInteraction : InteractionScript
             {
                 case InteractionType.Book:
                     TriggerWithBook(character.CarryItem);
-                    break;
+                    return true;
             }
         }
+
+        return false;
     }
     
     private void TriggerWithBook(InteractionScript script)

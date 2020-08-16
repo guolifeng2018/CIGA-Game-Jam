@@ -12,7 +12,7 @@ public class BoxInteraction : InteractionScript
         base.OnStart();
     }
     
-    public override void TriggerEnterAction()
+    public override bool TriggerEnterAction()
     {
         base.TriggerEnterAction();
         Character character = FindObjectOfType<Character>();
@@ -22,9 +22,11 @@ public class BoxInteraction : InteractionScript
             {
                 case InteractionType.Casekey:
                     TriggerWithCaseKey(character.CarryItem);
-                    break;
+                    return true;
             }
         }
+
+        return false;
     }
 
     private void TriggerWithCaseKey(InteractionScript script)

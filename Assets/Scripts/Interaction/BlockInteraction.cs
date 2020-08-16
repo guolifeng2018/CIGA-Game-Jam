@@ -12,7 +12,7 @@ public class BlockInteraction : InteractionScript
         m_key.gameObject.SetActive(false);
     }
     
-    public override void TriggerEnterAction()
+    public override bool TriggerEnterAction()
     {
         base.TriggerEnterAction();
         Character character = FindObjectOfType<Character>();
@@ -22,9 +22,11 @@ public class BlockInteraction : InteractionScript
             {
                 case InteractionType.Knife:
                     TriggerWithKnife(character.CarryItem);
-                    break;
+                    return true;
             }
         }
+
+        return false;
     }
 
     private void TriggerWithKnife(InteractionScript script)
