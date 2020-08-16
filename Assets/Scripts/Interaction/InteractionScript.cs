@@ -22,6 +22,9 @@ public enum InteractionType
     Book = 0x8000,
     Casekey = 0x10000,
     BabyBear = 0x20000,
+    
+    WoodBox = 0x40000,
+    Cellar = 0x80000,
 }
 
 public class InteractionScript : MonoBehaviour

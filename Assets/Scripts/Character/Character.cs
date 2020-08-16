@@ -110,6 +110,16 @@ public class Character : MonoBehaviour
         }
     }
 
+    public void PickUpItem(InteractionScript script)
+    {
+        if (script.m_canPick)
+        {
+            m_carryItem = script;
+            m_carryItem.PickUpItem(m_pickNode.transform);
+            m_interactionItems.Remove(m_carryItem);
+        }
+    }
+
     private void FixedUpdate()
     {
         m_rigidBody2D.MovePosition(m_rigidBody2D.position + m_movement * m_moveSpeed * Time.deltaTime);

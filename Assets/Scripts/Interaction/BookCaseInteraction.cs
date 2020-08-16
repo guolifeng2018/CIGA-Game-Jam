@@ -8,6 +8,9 @@ public class BookCaseInteraction : InteractionScript
     public Vector3 m_originPosition;
 
     public GameObject m_bookSlot;
+    public InteractionScript m_book;
+
+    public bool m_canTakeOff = false;
     
     protected override void OnStart()
     {
@@ -15,6 +18,8 @@ public class BookCaseInteraction : InteractionScript
         
         m_downPosition = new Vector3(1.29f, 2.07f, 0f);
         m_originPosition = transform.localPosition;
+        
+        m_book.gameObject.SetActive(false);
     }
     
     public override bool TriggerEnterAction()
@@ -30,8 +35,25 @@ public class BookCaseInteraction : InteractionScript
                     return true;
             }
         }
+        else
+        {
+            if (m_canTakeOff)
+            {
+                TriggerTakeOffBook(m_book);
+            }
+        }
 
         return false;
+    }
+
+    private void TriggerTakeOffBook(InteractionScript script)
+    {
+        m_bookSlot.SetActive(false);
+        script.gameObject.SetActive(true);
+        Character character = FindObjectOfType<Character>();
+        character.PickUpItem(script);
+        
+        GlobalEvent.DispatchEvent("BookCaseUp");
     }
     
     private void TriggerWithBook(InteractionScript script)

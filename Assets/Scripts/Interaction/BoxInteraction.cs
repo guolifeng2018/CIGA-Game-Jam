@@ -6,10 +6,13 @@ public class BoxInteraction : InteractionScript
 {
     public Sprite m_boxOpen;
     public InteractionScript m_key;
+    private Animator m_aniamtor;
     
     protected override void OnStart()
     {
         base.OnStart();
+
+        m_aniamtor = GetComponent<Animator>();
     }
     
     public override bool TriggerEnterAction()
@@ -31,10 +34,12 @@ public class BoxInteraction : InteractionScript
 
     private void TriggerWithCaseKey(InteractionScript script)
     {
+        GlobalEvent.DispatchEvent("Box_Opened");
+        
         CaseKeyInteraction caseKey = script as CaseKeyInteraction;
         if (caseKey != null)
         {
-            m_render.sprite = m_boxOpen;
+            m_aniamtor.Play("Box_Open");
             script.gameObject.SetActive(false);
             Character character = FindObjectOfType<Character>();
             character.DropCarryItem();

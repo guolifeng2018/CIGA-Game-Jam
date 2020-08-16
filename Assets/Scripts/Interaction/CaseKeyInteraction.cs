@@ -20,4 +20,11 @@ public class CaseKeyInteraction : InteractionScript
     {
         LeanTween.moveLocal(gameObject, new Vector3(-2.692f, -0.58f, 0f), 0.5f).setEaseInOutSine();
     }
+
+    public override void PickUpItem(Transform parent)
+    {
+        base.PickUpItem(parent);
+        
+        GlobalEvent.DispatchEvent("Cellar_Open");
+    }
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 public class BlockInteraction : InteractionScript
 {
     public InteractionScript m_key;
+
+    public bool m_openState = false;
     
     protected override void OnStart()
     {
@@ -32,14 +34,29 @@ public class BlockInteraction : InteractionScript
     private void TriggerWithKnife(InteractionScript script)
     {
         KnifeInteraction knife = script as KnifeInteraction;
-        if (knife != null && knife.KnifeState == KnifeInteraction.EKnifeState.Screwdriver)
+        if (knife != null)
         {
-            LeanTween.moveLocal(gameObject, new Vector3(1.07f, -0.3f, 0f), 0.3f).setEaseInOutSine().setOnComplete((o =>
+            if (knife.KnifeState == KnifeInteraction.EKnifeState.Screwdriver)
             {
-                m_key.gameObject.SetActive(true);
-            }));
-            knife.SetOutLine(false);
-            knife.enabled = false;
+                if (!m_openState)
+                {
+                    LeanTween.moveLocal(gameObject, new Vector3(1.07f, -0.3f, 0f), 0.3f).setEaseInOutSine().setOnComplete((o =>
+                    {
+                        m_key.gameObject.SetActive(true);
+                    }));
+                    knife.SetOutLine(false);
+                    knife.enabled = false;
+                }
+                else
+                {
+                    LeanTween.moveLocal(gameObject, new Vector3(0.24f, 0.09f, 0f), 0.3f).setEaseInOutSine().setOnComplete((o =>
+                    {
+                        m_key.gameObject.SetActive(false);
+                    }));
+                    knife.SetOutLine(false);
+                    knife.enabled = false;
+                }
+            }
         }
     }
 }
